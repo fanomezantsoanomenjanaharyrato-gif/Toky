@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RATOKY Fanomezantsoa - Portfolio CV</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Carte principale */
+    .cv-container {
+      max-width: 1100px;
+      width: 100%;
+      background: white;
+      border-radius: 30px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Bannière avec overlay */
+    .banner {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .banner:hover img {
+      transform: scale(1.05);
+    }
+
+    .banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.4) 100%);
+    }
+
+    /* Photo de profil */
+    .profile-section {
+      position: relative;
+      padding: 0 40px;
+      margin-top: -80px;
+      z-index: 10;
+    }
+
+    .profile-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid white;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-photo span {
+      font-size: 60px;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    /* Contenu principal */
+    .content {
+      padding: 30px 40px 40px;
+    }
+
+    /* Titre principal */
+    .main-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .main-title h1 {
+      font-size: 32px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .main-title .subtitle {
+      color: #666;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    /* Grille d'informations */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      background: #f8fafc;
+      padding: 25px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .info-grid:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+    }
+
+    .info-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-label {
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .info-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: #2d3748;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 30px;
+      animation: slideIn 0.5s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .section-title h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #2d3748;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+
+    .section:hover .section-title h2::after {
+      width: 100px;
+    }
+
+    .section-icon {
+      font-size: 28px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Langues */
+    .languages {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .language-card {
+      background: white;
+      padding: 15px 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      border: 1px solid #edf2f7;
+    }
+
+    .language-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+      border-color: #667eea;
+    }
+
+    .language-flag {
+      font-size: 24px;
+    }
+
+    .language-name {
+      font-weight: 600;
+      color: #2d3748;
+    }
+
+    .language-level {
+      font-size: 14px;
+      color: #667eea;
+      font-weight: 500;
+      margin-left: 5px;
+    }
+
+    /* Diplômes */
+    .diplomas {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .diploma-item {
+      background: #f8fafc;
+      padding: 20px;
+      border-radius: 15px;
+      border-left: 4px solid #667eea;
+      transition: all 0.3s ease;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    .diploma-item:hover {
+      background: white;
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
+      transform: translateX(5px);
+    }
+
+    .diploma-year {
+      font-size: 14px;
+      color: #667eea;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .diploma-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 5px;
+    }
+
+    .diploma-desc {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Loisirs */
+    .hobbies {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hobby-card {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      padding: 15px 30px;
+      border-radius: 50px;
+      color: white;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    .hobby-icon {
+      font-size: 20px;
+    }
+
+    /* Badge étudiant */
+    .student-badge {
+      background: linear-gradient(135deg, #667eea10, #764ba210);
+      border: 1px solid #667eea30;
+      padding: 15px 20px;
+      border-radius: 15px;
+      margin: 20px 0;
+      display: inline-block;
+      font-weight: 500;
+      color: #4a5568;
+    }
+
+    .student-badge strong {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .diplomas {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-section {
+        padding: 0 20px;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .profile-photo {
+        width: 120px;
+        height: 120px;
+      }
+
+      .profile-photo span {
+        font-size: 45px;
+      }
+
+      .main-title h1 {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .languages {
+        flex-direction: column;
+      }
+
+      .language-card {
+        width: 100%;
+      }
+
+      .hobby-card {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Animations supplémentaires */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .diploma-item:nth-child(1) { animation-delay: 0.1s; }
+    .diploma-item:nth-child(2) { animation-delay: 0.2s; }
+    .diploma-item:nth-child(3) { animation-delay: 0.3s; }
+    .diploma-item:nth-child(4) { animation-delay: 0.4s; }
+
+    /* Scrollbar personnalisée */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #764ba2, #667eea);
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-container">
+    <!-- Bannière -->
+    <div class="banner">
+      <img src="Img.jpg" alt="" />
+      <div class="banner-overlay"></div>
+    </div>
+
+    <!-- Section photo de profil -->
+    <div class="profile-section">
+      <div class="profile-photo">
+        <span>RF</span>
+      </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="content">
+      <!-- Titre -->
+      <div class="main-title">
+        <h1>RATOKY Fanomezantsoa Nomenjanahary</h1>
+        <div class="subtitle">Étudiante en Développement d'Applications</div>
+      </div>
+
+      <!-- Grille d'informations -->
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-icon">📱</div>
+          <div class="info-text">
+            <span class="info-label">Téléphone</span>
+            <span class="info-value">038 72 744 15</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📧</div>
+          <div class="info-text">
+            <span class="info-label">Email</span>
+            <span class="info-value">fanomezantsoa724@gmail.com</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-text">
+            <span class="info-label">Adresse</span>
+            <span class="info-value">Andrainjato, Fianarantsoa</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🎂</div>
+          <div class="info-text">
+            <span class="info-label">Naissance</span>
+            <span class="info-value">28 Janvier 2007</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🔢</div>
+          <div class="info-text">
+            <span class="info-label">Numéro</span>
+            <span class="info-value">267I26</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">👤</div>
+          <div class="info-text">
+            <span class="info-label">Sexe</span>
+            <span class="info-value">Féminin</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🌍</div>
+          <div class="info-text">
+            <span class="info-label">Nationalité</span>
+            <span class="info-value">Malagasy</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📘</div>
+          <div class="info-text">
+            <span class="info-label">Facebook</span>
+            <span class="info-value">fanomezantsoa fanomezantsoa</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Badge étudiant -->
+      <div class="student-badge">
+        🎓 <strong>Étudiante à l'École de Management et d'Innovation Technologique</strong> — Niveau L1 en Informatique (DA2I)
+      </div>
+
+      <!-- Section Langues -->
+      <div class="section">
+        <div class="section-title">
+          <span class="section-icon">🗣️</span>
+          <h2>Langues</h2>
+        </div>
+        <div class="languages">
+          <div class="language-card">
+            <span class="language-flag">🇲🇬</span>
+            <span class="language-name">Malagasy</span>
+            <span class="language-level">(Maternel)</span>
+          </div>
+          <div class="language-card">
+            <span class="language-flag">🇫🇷</span>
+            <span class="language-name">Français</span>
+            <span class="language-level">(Niveau moyen)</span>
+          </div>
+          <div class="language-card">
+            <span class="language-flag">🇬🇧</span>
+            <span class="language-name">Anglais</span>
+            <span class="language-level">(Niveau moyen)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Diplômes -->
+      <div class="section">
+        <div class="section-title">
+          <span class="section-icon">🎓</span>
+          <h2>Études et Diplômes</h2>
+        </div>
+        <div class="diplomas">
+          <div class="diploma-item">
+            <div class="diploma-year">2025 - 2026</div>
+            <div class="diploma-title">L1 DA2I</div>
+            <div class="diploma-desc">Développement d'Applications Internet et Intranet</div>
+          </div>
+          <div class="diploma-item">
+            <div class="diploma-year">2024 - 2025</div>
+            <div class="diploma-title">Baccalauréat</div>
+            <div class="diploma-desc">Série (à préciser)</div>
+          </div>
+          <div class="diploma-item">
+            <div class="diploma-year">2021 - 2022</div>
+            <div class="diploma-title">BEPC</div>
+            <div class="diploma-desc">Brevet d'Études du Premier Cycle</div>
+          </div>
+          <div class="diploma-item">
+            <div class="diploma-year">2017 - 2018</div>
+            <div class="diploma-title">CEPE</div>
+            <div class="diploma-desc">Certificat d'Études Primaires Élémentaires</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Loisirs -->
+      <div class="section">
+        <div class="section-title">
+          <span class="section-icon">⚡</span>
+          <h2>Loisirs et Sports</h2>
+        </div>
+        <div class="hobbies">
+          <div class="hobby-card">
+            <span class="hobby-icon">⚽</span>
+            Football
+          </div>
+          <div class="hobby-card">
+            <span class="hobby-icon">🎮</span>
+            Jeux vidéo
+          </div>
+          <div class="hobby-card">
+            <span class="hobby-icon">📚</span>
+            Lecture
+          </div>
+          <div class="hobby-card">
+            <span class="hobby-icon">🎵</span>
+            Musique
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
