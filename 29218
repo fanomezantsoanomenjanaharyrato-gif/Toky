@@ -1,0 +1,58 @@
+7<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>document</title>
+  <link rel="stylesheet" href="new.css">
+</head>
+<body>
+	<img src="" alt="" />
+ 
+  <div>
+    <div class="titre">
+      <h1>CURRICILUM VITÆ</h1>
+    </div>
+    <div>
+      <div class="photo"
+        <img src="my.jpg"/>
+    </div>
+    <div class="titre"
+      <div  class="nom"
+        <h1> RATOKY Fanomezantsoa Nomenjanahary </h1>
+        <il>Num:267I26</il>
+        <il>FB:fanomezantsoa fanomezantsoa</il> 
+        <li>E-MAIL:fanomezantsoa724@gmail.com</li>
+        <li>contact:038 72 744 15</li>
+        <li>Adresse:Andrainjato(fianarantsoa)</li>
+        <li>Date de naissance:28 Janvier 2007<ili>
+        <li>Sexe:fémin</li>  
+          <li>Nationalite:Malagasy</li>
+        <h5>(Etudiant à l'Ecole Management et d' Innovation Technologique<br>niveau:L1 en informatique (DA2I)</H5>
+      </div>
+      <div class="titre">
+        <h2>LANGUE</h2>
+        <div>
+          <ul>
+            <li>Malagasy:langue maternel</li>
+            <li>Français:moyenne</li>
+            <li>Anglais:moyenne</li>
+          </ul>
+        </div>
+      </div>
+      <ul>
+        <h2>ETUDES et DIPLÔMES</h2>
+        <li>Année:2025-2026 :L1 Developpement d'application Itranet Internet (DA2I)</li>
+        <li>Année:2024-2025:BACC</li>
+        <li>Année:2021-2022:BEPC</li>
+        <li>Année:2017-2018:CEPE</li>
+        <ul>
+        </div>
+        <ul>
+          <h2>LOISIR ET SPORT</h2>
+          <il>Foot ball</il>
+          <il>JEUX</il>
+          <ul>
+        
+</body>
+</html>
